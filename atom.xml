@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <title>吕超贤的博客</title>
+  <title>小驴球的技术积累</title>
   
   
   <link href="/atom.xml" rel="self"/>
@@ -10,7 +10,7 @@
   <id>https://njustlcx.github.io/</id>
   
   <author>
-    <name>吕超贤</name>
+    <name>小驴球</name>
     
   </author>
   
