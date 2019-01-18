@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://njustlcx.github.io/"/>
-  <updated>2019-01-18T08:05:36.407Z</updated>
+  <updated>2019-01-18T09:08:35.707Z</updated>
   <id>https://njustlcx.github.io/</id>
   
   <author>
@@ -15,6 +15,72 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Java值传递</title>
+    <link href="https://njustlcx.github.io/2019/01/18/Java%E5%80%BC%E4%BC%A0%E9%80%92/"/>
+    <id>https://njustlcx.github.io/2019/01/18/Java值传递/</id>
+    <published>2019-01-18T09:08:35.000Z</published>
+    <updated>2019-01-18T09:08:35.707Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>linux免密登录</title>
+    <link href="https://njustlcx.github.io/2019/01/18/linux%E5%85%8D%E5%AF%86%E7%99%BB%E5%BD%95/"/>
+    <id>https://njustlcx.github.io/2019/01/18/linux免密登录/</id>
+    <published>2019-01-18T08:40:33.000Z</published>
+    <updated>2019-01-18T09:19:51.145Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="环境"><a href="#环境" class="headerlink" title="环境"></a>环境</h1><p>两台主机：192.168.1.230 192.168.1.231。现在需要通过ssh，实现192.168.1.230到231的免密登录。</p><h1 id="生成密钥"><a href="#生成密钥" class="headerlink" title="生成密钥"></a>生成密钥</h1><p>在192.168.1.230上生成一对密钥，一个作为公钥，一个作为s私钥。如果已有对应的公钥和私钥，则不需要这一步。命令如下：</p><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh-keygen</span><br></pre></td></tr></table></figure><p>一直按回车就行。</p><p><img src="/2019/01/18/linux免密登录/1547801329751.png" alt="1547801329751"></p><p>出现红框内的图案表示密钥生成成功。可以发现用户的.ssh目录下出现了id_rsa和id_rsa.pub，前者为私钥，后者为公钥。</p><p><img src="/2019/01/18/linux免密登录/1547801391719.png" alt="1547801391719"></p><h1 id="部署公钥到目标主机"><a href="#部署公钥到目标主机" class="headerlink" title="部署公钥到目标主机"></a>部署公钥到目标主机</h1><p>在当前服务器执行ssh-copy-id命令，将公钥部署到目标服务器，用法如下：</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 命令格式：ssh-copy-id 用户名@ip地址</span></span><br><span class="line">ssh-copy-id shqz@192.168.1.231</span><br></pre></td></tr></table></figure><p>执行这条命令之后需要输入目标主机的登录密码，输入之后即可进行免密登录。</p><p><img src="/2019/01/18/linux免密登录/1547801757766.png" alt="1547801757766"></p><p>出现上图表示公钥部署成功。</p><h1 id="免密登录"><a href="#免密登录" class="headerlink" title="免密登录"></a>免密登录</h1><p>前面已经将密钥配置完成，最后只需要执行如下ssh命令即可免密登录：</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh shqz@192.168.1.231</span><br></pre></td></tr></table></figure><p><img src="/2019/01/18/linux免密登录/1547801961174.png" alt="1547801961174"></p><p>发现，无需输入密码就登录到目标主机。</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;环境&quot;&gt;&lt;a href=&quot;#环境&quot; class=&quot;headerlink&quot; title=&quot;环境&quot;&gt;&lt;/a&gt;环境&lt;/h1&gt;&lt;p&gt;两台主机：192.168.1.230 192.168.1.231。现在需要通过ssh，实现192.168.1.230到231的免密登录。&lt;/
+      
+    
+    </summary>
+    
+      <category term="linux" scheme="https://njustlcx.github.io/categories/linux/"/>
+    
+    
+      <category term="linux" scheme="https://njustlcx.github.io/tags/linux/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>ansible问题记录</title>
+    <link href="https://njustlcx.github.io/2019/01/18/ansible%E9%97%AE%E9%A2%98%E8%AE%B0%E5%BD%95/"/>
+    <id>https://njustlcx.github.io/2019/01/18/ansible问题记录/</id>
+    <published>2019-01-18T08:21:37.000Z</published>
+    <updated>2019-01-18T08:34:27.590Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="关于aix"><a href="#关于aix" class="headerlink" title="关于aix"></a>关于aix</h1><h2 id="ansible连接不了aix服务器"><a href="#ansible连接不了aix服务器" class="headerlink" title="ansible连接不了aix服务器"></a>ansible连接不了aix服务器</h2><p>首先判断是不是aix服务器上没有python环境，如果没有，需要先安装合适版本的python环境。发现安装python环境之后依旧连接不上，不知道问题在哪。后来尝试加入连接方式，使用命令行参数-c，指定连接方式为paramiko，就连接成功了。</p><h2 id="ansible无法执行aix的任务"><a href="#ansible无法执行aix的任务" class="headerlink" title="ansible无法执行aix的任务"></a>ansible无法执行aix的任务</h2><p>使用raw模块在aix上执行playbook的任务，发现卡住，但之前gather_facts已经跑通了。由此可知ansible可以在aix上跑任务，怀疑是raw模块的原因。于是将raw模块换成shell模块，成功执行。</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;关于aix&quot;&gt;&lt;a href=&quot;#关于aix&quot; class=&quot;headerlink&quot; title=&quot;关于aix&quot;&gt;&lt;/a&gt;关于aix&lt;/h1&gt;&lt;h2 id=&quot;ansible连接不了aix服务器&quot;&gt;&lt;a href=&quot;#ansible连接不了aix服务器&quot; class
+      
+    
+    </summary>
+    
+      <category term="ansible" scheme="https://njustlcx.github.io/categories/ansible/"/>
+    
+    
+      <category term="ansible" scheme="https://njustlcx.github.io/tags/ansible/"/>
+    
+      <category term="aix" scheme="https://njustlcx.github.io/tags/aix/"/>
+    
+  </entry>
   
   <entry>
     <title>设计模式Java实现</title>
