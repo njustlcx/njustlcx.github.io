@@ -1,6 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[nexus安装步骤]]></title>
+    <url>%2F2019%2F01%2F18%2Fnexus%E5%AE%89%E8%A3%85%E6%AD%A5%E9%AA%A4%2F</url>
+    <content type="text"><![CDATA[拉取安装包(nexus-3.15.1-01-unix.tar.gz)到指定目录打开8081端口123tar -zxvf nexus-3.15.1-01-unix.tar.gzcd nexus-3.15.1-01/bin./nexus run &amp; 启动成功即可。]]></content>
+      <categories>
+        <category>java</category>
+      </categories>
+      <tags>
+        <tag>nexus</tag>
+        <tag>java</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[Java值传递]]></title>
     <url>%2F2019%2F01%2F18%2FJava%E5%80%BC%E4%BC%A0%E9%80%92%2F</url>
     <content type="text"></content>
@@ -48,8 +60,8 @@
         <category>ansible</category>
       </categories>
       <tags>
-        <tag>inventory</tag>
         <tag>ansible</tag>
+        <tag>inventory</tag>
       </tags>
   </entry>
   <entry>

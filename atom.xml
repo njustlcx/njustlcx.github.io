@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://njustlcx.github.io/"/>
-  <updated>2019-01-18T09:08:35.707Z</updated>
+  <updated>2019-01-18T10:17:11.793Z</updated>
   <id>https://njustlcx.github.io/</id>
   
   <author>
@@ -15,6 +15,33 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>nexus安装步骤</title>
+    <link href="https://njustlcx.github.io/2019/01/18/nexus%E5%AE%89%E8%A3%85%E6%AD%A5%E9%AA%A4/"/>
+    <id>https://njustlcx.github.io/2019/01/18/nexus安装步骤/</id>
+    <published>2019-01-18T10:10:45.000Z</published>
+    <updated>2019-01-18T10:17:11.793Z</updated>
+    
+    <content type="html"><![CDATA[<p>拉取安装包(nexus-3.15.1-01-unix.tar.gz)到指定目录<br>打开8081端口<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">tar -zxvf nexus-3.15.1-01-unix.tar.gz</span><br><span class="line">cd nexus-3.15.1-01/bin</span><br><span class="line">./nexus run &amp;</span><br></pre></td></tr></table></figure></p><p>启动成功即可。</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;拉取安装包(nexus-3.15.1-01-unix.tar.gz)到指定目录&lt;br&gt;打开8081端口&lt;br&gt;&lt;figure class=&quot;highlight shell&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;li
+      
+    
+    </summary>
+    
+      <category term="java" scheme="https://njustlcx.github.io/categories/java/"/>
+    
+    
+      <category term="nexus" scheme="https://njustlcx.github.io/tags/nexus/"/>
+    
+      <category term="java" scheme="https://njustlcx.github.io/tags/java/"/>
+    
+  </entry>
   
   <entry>
     <title>Java值传递</title>
@@ -114,7 +141,7 @@
     <link href="https://njustlcx.github.io/2019/01/18/ansible%E5%9F%BA%E7%A1%80%E4%B9%8Binventory/"/>
     <id>https://njustlcx.github.io/2019/01/18/ansible基础之inventory/</id>
     <published>2019-01-18T06:13:01.000Z</published>
-    <updated>2019-01-18T07:49:01.314Z</updated>
+    <updated>2019-01-18T09:31:30.309Z</updated>
     
     <content type="html"><![CDATA[<h1 id="inventory的定义"><a href="#inventory的定义" class="headerlink" title="inventory的定义"></a>inventory的定义</h1><p>inventory是ansible里面用来管理主机的文件，在inventory文件里面，有组的概念，主机的概念，还可以定义inventory变量。inventory文件的示例如下：</p><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="section">[mysql]</span> </span><br><span class="line">192.168.1.200</span><br><span class="line">192.168.1.201</span><br><span class="line">192.168.1.202</span><br><span class="line"><span class="section">[ams]</span></span><br><span class="line">192.168.1.220</span><br><span class="line">192.168.1.221</span><br><span class="line"><span class="section">[db: children]</span></span><br><span class="line">mysql</span><br></pre></td></tr></table></figure><h1 id="组和主机"><a href="#组和主机" class="headerlink" title="组和主机"></a>组和主机</h1><p>在inventory里面，组是一个逻辑上的概念，用来描述一组主机是来干什么的。组的定义通过一对中括号括起来，里面填写组的名字。如示例1所示，mysql和ams就是就是这个inventory文件里面定义的两个组。mysql组可能用来部署数据库服务器，ams组可能会用来部署ams应用。一个组下面的主机是属于这个组，一个主机可以属于多个组。</p><h1 id="主机变量"><a href="#主机变量" class="headerlink" title="主机变量"></a>主机变量</h1><p>可以在inventory文件里定义主机变量。格式如下所示：</p><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="section">[mysql]</span> </span><br><span class="line">192.168.1.200 ansible_ssh_user=mysql ansible_ssh_pass=mysql</span><br><span class="line">192.168.1.201</span><br><span class="line">192.168.1.202</span><br><span class="line"><span class="section">[ams]</span></span><br><span class="line">192.168.1.220</span><br><span class="line">192.168.1.221</span><br><span class="line"><span class="section">[db: children]</span></span><br><span class="line">mysql</span><br></pre></td></tr></table></figure><p>ansible_ssh_user和ansible_ssh_pass是主机192.168.1.200的主机变量，分别表示连接这台主机的用户名和密码。这两个变量属于ansible的内置变量，也可以定义自己的变量。</p><h1 id="组变量"><a href="#组变量" class="headerlink" title="组变量"></a>组变量</h1><p>组变量是属于某个组的变量，这个组里面的主机都能够使用这个变量。组变量的定义方式如下：</p><figure class="highlight ini"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="section">[mysql]</span> </span><br><span class="line">192.168.1.200 ansible_ssh_user=mysql ansible_ssh_pass=mysql</span><br><span class="line">192.168.1.201</span><br><span class="line">192.168.1.202</span><br><span class="line"><span class="section">[mysql:vars]</span></span><br><span class="line"><span class="attr">ntp_server</span>=ntp.atlanta.example.com</span><br><span class="line"><span class="attr">proxy</span>=proxy.atlanta.example.com</span><br></pre></td></tr></table></figure><p>ntp_server和proxy为mysql这个组的组变量。主机变量的优先级高于组变量，也就是说，如果主机变量和组变量同名，那么主机变量将会覆盖组变量。</p><h1 id="子组"><a href="#子组" class="headerlink" title="子组"></a>子组</h1><p>一个组可以是另一个组的孩子。</p><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="section">[mysql]</span> </span><br><span class="line">192.168.1.200 ansible_ssh_user=mysql ansible_ssh_pass=mysql</span><br><span class="line">192.168.1.201</span><br><span class="line">192.168.1.202</span><br><span class="line"><span class="section">[ams]</span></span><br><span class="line">192.168.1.220</span><br><span class="line">192.168.1.221</span><br><span class="line"><span class="section">[db: children]</span></span><br><span class="line">mysql</span><br></pre></td></tr></table></figure><p>mysql这个组就是db组的孩子。对parent组进行操作，也会对其子组进行同样的操作。</p>]]></content>
     
@@ -130,9 +157,9 @@
       <category term="ansible" scheme="https://njustlcx.github.io/categories/ansible/"/>
     
     
-      <category term="inventory" scheme="https://njustlcx.github.io/tags/inventory/"/>
-    
       <category term="ansible" scheme="https://njustlcx.github.io/tags/ansible/"/>
+    
+      <category term="inventory" scheme="https://njustlcx.github.io/tags/inventory/"/>
     
   </entry>
   
