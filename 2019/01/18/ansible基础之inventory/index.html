@@ -110,7 +110,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT">
+  <meta name="keywords" content="inventory,ansible,">
 
 
 
@@ -123,16 +123,18 @@
 
 
 
-<meta name="description" content="我的技术积累">
-<meta property="og:type" content="website">
-<meta property="og:title" content="小驴球的技术积累">
-<meta property="og:url" content="https://njustlcx.github.io/categories/test/index.html">
+<meta name="description" content="inventory的定义inventory是ansible里面用来管理主机的文件，在inventory文件里面，有组的概念，主机的概念，还可以定义inventory变量。inventory文件的示例如下： 123456789[mysql] 192.168.1.200192.168.1.201192.168.1.202[ams]192.168.1.220192.168.1.221[db: child">
+<meta name="keywords" content="inventory,ansible">
+<meta property="og:type" content="article">
+<meta property="og:title" content="ansible基础之inventory">
+<meta property="og:url" content="https://njustlcx.github.io/2019/01/18/ansible基础之inventory/index.html">
 <meta property="og:site_name" content="小驴球的技术积累">
-<meta property="og:description" content="我的技术积累">
+<meta property="og:description" content="inventory的定义inventory是ansible里面用来管理主机的文件，在inventory文件里面，有组的概念，主机的概念，还可以定义inventory变量。inventory文件的示例如下： 123456789[mysql] 192.168.1.200192.168.1.201192.168.1.202[ams]192.168.1.220192.168.1.221[db: child">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2019-01-18T07:49:01.314Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="小驴球的技术积累">
-<meta name="twitter:description" content="我的技术积累">
+<meta name="twitter:title" content="ansible基础之inventory">
+<meta name="twitter:description" content="inventory的定义inventory是ansible里面用来管理主机的文件，在inventory文件里面，有组的概念，主机的概念，还可以定义inventory变量。inventory文件的示例如下： 123456789[mysql] 192.168.1.200192.168.1.201192.168.1.202[ams]192.168.1.220192.168.1.221[db: child">
 
 
 
@@ -162,13 +164,13 @@
 
 
 
-  <link rel="canonical" href="https://njustlcx.github.io/categories/test/">
+  <link rel="canonical" href="https://njustlcx.github.io/2019/01/18/ansible基础之inventory/">
 
 
 
 
 
-  <title>分类: test | 小驴球的技术积累</title>
+  <title>ansible基础之inventory | 小驴球的技术积累</title>
   
 
 
@@ -190,7 +192,7 @@
     <script type="text/javascript" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js"></script>
   
 
-  <div class="container sidebar-position-left ">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
@@ -326,53 +328,214 @@
           <div id="content" class="content">
             
 
-  
-  
-  
-  <div class="post-block category">
+  <div id="posts" class="posts-expand">
+    
 
-    <div id="posts" class="posts-collapse">
-      <div class="collection-title">
-        <h1>test<small>分类</small>
-        </h1>
-      </div>
+  
 
-      
-        
+  
+  
+  
 
   <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-    <header class="post-header">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://njustlcx.github.io/2019/01/18/ansible基础之inventory/">
 
-      <h2 class="post-title">
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="小驴球">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/header.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="小驴球的技术积累">
+    </span>
+
+    
+      <header class="post-header">
+
         
-            <a class="post-title-link" href="/2019/01/17/hello/" itemprop="url">
-              
-                <span itemprop="name">hello</span>
-              
-            </a>
         
-      </h2>
+          <h1 class="post-title" itemprop="name headline">ansible基础之inventory</h1>
+        
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-01-17T09:56:16+08:00" content="2019-01-17">
-          01-17
-        </time>
-      </div>
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-01-18T14:13:01+08:00">
+                2019-01-18
+              </time>
+            
 
-    </header>
-  </article>
+            
 
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/ansible/" itemprop="url" rel="index">
+                    <span itemprop="name">ansible</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv">本文总阅读量
+            <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>次
+            </span>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="inventory的定义"><a href="#inventory的定义" class="headerlink" title="inventory的定义"></a>inventory的定义</h1><p>inventory是ansible里面用来管理主机的文件，在inventory文件里面，有组的概念，主机的概念，还可以定义inventory变量。inventory文件的示例如下：</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="section">[mysql]</span> </span><br><span class="line">192.168.1.200</span><br><span class="line">192.168.1.201</span><br><span class="line">192.168.1.202</span><br><span class="line"><span class="section">[ams]</span></span><br><span class="line">192.168.1.220</span><br><span class="line">192.168.1.221</span><br><span class="line"><span class="section">[db: children]</span></span><br><span class="line">mysql</span><br></pre></td></tr></table></figure>
+<h1 id="组和主机"><a href="#组和主机" class="headerlink" title="组和主机"></a>组和主机</h1><p>在inventory里面，组是一个逻辑上的概念，用来描述一组主机是来干什么的。组的定义通过一对中括号括起来，里面填写组的名字。如示例1所示，mysql和ams就是就是这个inventory文件里面定义的两个组。mysql组可能用来部署数据库服务器，ams组可能会用来部署ams应用。一个组下面的主机是属于这个组，一个主机可以属于多个组。</p>
+<h1 id="主机变量"><a href="#主机变量" class="headerlink" title="主机变量"></a>主机变量</h1><p>可以在inventory文件里定义主机变量。格式如下所示：</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="section">[mysql]</span> </span><br><span class="line">192.168.1.200 ansible_ssh_user=mysql ansible_ssh_pass=mysql</span><br><span class="line">192.168.1.201</span><br><span class="line">192.168.1.202</span><br><span class="line"><span class="section">[ams]</span></span><br><span class="line">192.168.1.220</span><br><span class="line">192.168.1.221</span><br><span class="line"><span class="section">[db: children]</span></span><br><span class="line">mysql</span><br></pre></td></tr></table></figure>
+<p>ansible_ssh_user和ansible_ssh_pass是主机192.168.1.200的主机变量，分别表示连接这台主机的用户名和密码。这两个变量属于ansible的内置变量，也可以定义自己的变量。</p>
+<h1 id="组变量"><a href="#组变量" class="headerlink" title="组变量"></a>组变量</h1><p>组变量是属于某个组的变量，这个组里面的主机都能够使用这个变量。组变量的定义方式如下：</p>
+<figure class="highlight ini"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="section">[mysql]</span> </span><br><span class="line">192.168.1.200 ansible_ssh_user=mysql ansible_ssh_pass=mysql</span><br><span class="line">192.168.1.201</span><br><span class="line">192.168.1.202</span><br><span class="line"><span class="section">[mysql:vars]</span></span><br><span class="line"><span class="attr">ntp_server</span>=ntp.atlanta.example.com</span><br><span class="line"><span class="attr">proxy</span>=proxy.atlanta.example.com</span><br></pre></td></tr></table></figure>
+<p>ntp_server和proxy为mysql这个组的组变量。主机变量的优先级高于组变量，也就是说，如果主机变量和组变量同名，那么主机变量将会覆盖组变量。</p>
+<h1 id="子组"><a href="#子组" class="headerlink" title="子组"></a>子组</h1><p>一个组可以是另一个组的孩子。</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="section">[mysql]</span> </span><br><span class="line">192.168.1.200 ansible_ssh_user=mysql ansible_ssh_pass=mysql</span><br><span class="line">192.168.1.201</span><br><span class="line">192.168.1.202</span><br><span class="line"><span class="section">[ams]</span></span><br><span class="line">192.168.1.220</span><br><span class="line">192.168.1.221</span><br><span class="line"><span class="section">[db: children]</span></span><br><span class="line">mysql</span><br></pre></td></tr></table></figure>
+<p>mysql这个组就是db组的孩子。对parent组进行操作，也会对其子组进行同样的操作。</p>
 
       
     </div>
+    
+    
+    
 
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/inventory/" rel="tag"># inventory</a>
+          
+            <a href="/tags/ansible/" rel="tag"># ansible</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/01/17/hello/" rel="next" title="hello">
+                <i class="fa fa-chevron-left"></i> hello
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </div>
   
   
   
+  </article>
 
-  
 
+
+    <div class="post-spread">
+      
+        
+  <script>
+    window._bd_share_config = {
+      "common": {
+        "bdText": "",
+        "bdMini": "1",
+        "bdMiniList": false,
+        "bdPic": ""
+      },
+      "image": {
+        "viewList": ["tsina", "douban", "sqq", "qzone", "weixin", "twi", "fbook"],
+        "viewText": "分享到：",
+        "viewSize": "16"
+      },
+      "slide": {
+        "bdImg": "5",
+        "bdPos": "left",
+        "bdTop": "100"
+      }
+    }
+  </script>
+
+<script>
+  with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='//bdimg.share.baidu.com/static/api/js/share.js?cdnversion='+~(-new Date()/36e5)];
+</script>
+
+      
+    </div>
+  </div>
 
 
           </div>
@@ -380,6 +543,10 @@
 
 
           
+
+  
+
+
 
         </div>
         
@@ -400,8 +567,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
             
@@ -486,6 +662,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#inventory的定义"><span class="nav-number">1.</span> <span class="nav-text">inventory的定义</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#组和主机"><span class="nav-number">2.</span> <span class="nav-text">组和主机</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#主机变量"><span class="nav-number">3.</span> <span class="nav-text">主机变量</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#组变量"><span class="nav-number">4.</span> <span class="nav-text">组变量</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#子组"><span class="nav-number">5.</span> <span class="nav-text">子组</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -655,6 +847,10 @@
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
 
   
 

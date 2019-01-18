@@ -1,6 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[ansible基础之inventory]]></title>
+    <url>%2F2019%2F01%2F18%2Fansible%E5%9F%BA%E7%A1%80%E4%B9%8Binventory%2F</url>
+    <content type="text"><![CDATA[inventory的定义inventory是ansible里面用来管理主机的文件，在inventory文件里面，有组的概念，主机的概念，还可以定义inventory变量。inventory文件的示例如下： 123456789[mysql] 192.168.1.200192.168.1.201192.168.1.202[ams]192.168.1.220192.168.1.221[db: children]mysql 组和主机在inventory里面，组是一个逻辑上的概念，用来描述一组主机是来干什么的。组的定义通过一对中括号括起来，里面填写组的名字。如示例1所示，mysql和ams就是就是这个inventory文件里面定义的两个组。mysql组可能用来部署数据库服务器，ams组可能会用来部署ams应用。一个组下面的主机是属于这个组，一个主机可以属于多个组。 主机变量可以在inventory文件里定义主机变量。格式如下所示： 123456789[mysql] 192.168.1.200 ansible_ssh_user=mysql ansible_ssh_pass=mysql192.168.1.201192.168.1.202[ams]192.168.1.220192.168.1.221[db: children]mysql ansible_ssh_user和ansible_ssh_pass是主机192.168.1.200的主机变量，分别表示连接这台主机的用户名和密码。这两个变量属于ansible的内置变量，也可以定义自己的变量。 组变量组变量是属于某个组的变量，这个组里面的主机都能够使用这个变量。组变量的定义方式如下： 1234567[mysql] 192.168.1.200 ansible_ssh_user=mysql ansible_ssh_pass=mysql192.168.1.201192.168.1.202[mysql:vars]ntp_server=ntp.atlanta.example.comproxy=proxy.atlanta.example.com ntp_server和proxy为mysql这个组的组变量。主机变量的优先级高于组变量，也就是说，如果主机变量和组变量同名，那么主机变量将会覆盖组变量。 子组一个组可以是另一个组的孩子。 123456789[mysql] 192.168.1.200 ansible_ssh_user=mysql ansible_ssh_pass=mysql192.168.1.201192.168.1.202[ams]192.168.1.220192.168.1.221[db: children]mysql mysql这个组就是db组的孩子。对parent组进行操作，也会对其子组进行同样的操作。]]></content>
+      <categories>
+        <category>ansible</category>
+      </categories>
+      <tags>
+        <tag>inventory</tag>
+        <tag>ansible</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[hello]]></title>
     <url>%2F2019%2F01%2F17%2Fhello%2F</url>
     <content type="text"></content>
