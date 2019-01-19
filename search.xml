@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[linux基础知识]]></title>
+    <url>%2F2019%2F01%2F19%2Flinux%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86%2F</url>
+    <content type="text"><![CDATA[linux 基础命令切换目录12345cd user # 切换到当前目录下的user目录cd .. # 打开上一级目录cd / # 切换到系统根目录cd ~ # 切换到当前用户的主目录cd - # 切换到上一个命令所在的目录 目录的操作命令(增删改查)创建目录12mkdir mydir # 在当前目录下创建mydir目录mkdir -p lcx/test # 在当前的lcx目录下创建test目录，如果lcx目录不存在，则创建 查看目录信息123ls # 查看当前目录下的文件(不包括以"."开头的文件)ls -a # 查看当前目录下的所有文件（包括以 "." 开头的文件)ll # ls -l的缩写。查看当前目录下所有文件和目录的详细信息(我一般使用这个命令查看权限较多) find命令用法：find 目录 参数 123find . # 列出当前目录以及子目录下的所有文件和文件夹find / -name "*.txt" # 找出系统根目录下以.txt结尾的文件find / -iname "*.txt" # 同上，但忽略大小写 mv命令mv命令可以对目录、文件进行重命名，也可以将一个文件从一个目录移动到另一个目录 12mv lcx user # 将lcx目录重新命名为user目录mv lcx.txt ../user # 将lcx.txt从当前目录移动到上级目录的user目录 cp 命令cp命令对文件和目录进行复制。用法：cp 目录名称 目标目录名称 12cp -r lcx lcx2 # 将lcx目录复制到lcx2目录，-r表示递归复制cp lcx.txt lcx2.txt # 将lcx.txt 复制一份到lcx2.txt 删除目录1rm -rf lcx # 删除lcx目录 文件操作相关命令创建文件1touch 1.txt # 创建1.txt 查看文件内容1cat 1.txt # 查看1.txt的内容 编辑文件内容1vim 1.txt # 编辑1.txt。按i进入vim的编辑模式，编辑好之后按ESC进入命令模式，最后按":wq"保存编辑好的文件并退出 删除文件1rm -rf 1.txt # 删除1.txt]]></content>
+      <categories>
+        <category>linux</category>
+      </categories>
+      <tags>
+        <tag>linux</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[nexus安装步骤]]></title>
     <url>%2F2019%2F01%2F18%2Fnexus%E5%AE%89%E8%A3%85%E6%AD%A5%E9%AA%A4%2F</url>
     <content type="text"><![CDATA[拉取安装包(nexus-3.15.1-01-unix.tar.gz)到指定目录打开8081端口123tar -zxvf nexus-3.15.1-01-unix.tar.gzcd nexus-3.15.1-01/bin./nexus run &amp; 启动成功即可。]]></content>
@@ -60,8 +71,8 @@
         <category>ansible</category>
       </categories>
       <tags>
-        <tag>ansible</tag>
         <tag>inventory</tag>
+        <tag>ansible</tag>
       </tags>
   </entry>
   <entry>

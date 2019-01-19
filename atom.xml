@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://njustlcx.github.io/"/>
-  <updated>2019-01-18T10:17:11.793Z</updated>
+  <updated>2019-01-19T12:48:08.587Z</updated>
   <id>https://njustlcx.github.io/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>linux基础知识</title>
+    <link href="https://njustlcx.github.io/2019/01/19/linux%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/"/>
+    <id>https://njustlcx.github.io/2019/01/19/linux基础知识/</id>
+    <published>2019-01-19T11:57:37.000Z</published>
+    <updated>2019-01-19T12:48:08.587Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="linux-基础命令"><a href="#linux-基础命令" class="headerlink" title="linux 基础命令"></a>linux 基础命令</h1><h2 id="切换目录"><a href="#切换目录" class="headerlink" title="切换目录"></a>切换目录</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">cd user # 切换到当前目录下的user目录</span><br><span class="line">cd .. # 打开上一级目录</span><br><span class="line">cd / # 切换到系统根目录</span><br><span class="line">cd ~ # 切换到当前用户的主目录</span><br><span class="line">cd - # 切换到上一个命令所在的目录</span><br></pre></td></tr></table></figure><h2 id="目录的操作命令-增删改查"><a href="#目录的操作命令-增删改查" class="headerlink" title="目录的操作命令(增删改查)"></a>目录的操作命令(增删改查)</h2><h3 id="创建目录"><a href="#创建目录" class="headerlink" title="创建目录"></a>创建目录</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">mkdir mydir # 在当前目录下创建mydir目录</span><br><span class="line">mkdir -p lcx/test # 在当前的lcx目录下创建test目录，如果lcx目录不存在，则创建</span><br></pre></td></tr></table></figure><h3 id="查看目录信息"><a href="#查看目录信息" class="headerlink" title="查看目录信息"></a>查看目录信息</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">ls # 查看当前目录下的文件(不包括以"."开头的文件)</span><br><span class="line">ls -a # 查看当前目录下的所有文件（包括以 "." 开头的文件)</span><br><span class="line">ll # ls -l的缩写。查看当前目录下所有文件和目录的详细信息(我一般使用这个命令查看权限较多)</span><br></pre></td></tr></table></figure><h3 id="find命令"><a href="#find命令" class="headerlink" title="find命令"></a>find命令</h3><p>用法：find 目录 参数</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">find . # 列出当前目录以及子目录下的所有文件和文件夹</span><br><span class="line">find / -name "*.txt" # 找出系统根目录下以.txt结尾的文件</span><br><span class="line">find / -iname "*.txt" # 同上，但忽略大小写</span><br></pre></td></tr></table></figure><h3 id="mv命令"><a href="#mv命令" class="headerlink" title="mv命令"></a>mv命令</h3><p>mv命令可以对目录、文件进行重命名，也可以将一个文件从一个目录移动到另一个目录</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">mv lcx user # 将lcx目录重新命名为user目录</span><br><span class="line">mv lcx.txt ../user # 将lcx.txt从当前目录移动到上级目录的user目录</span><br></pre></td></tr></table></figure><h3 id="cp-命令"><a href="#cp-命令" class="headerlink" title="cp 命令"></a>cp 命令</h3><p>cp命令对文件和目录进行复制。用法：cp 目录名称 目标目录名称</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cp -r lcx lcx2 # 将lcx目录复制到lcx2目录，-r表示递归复制</span><br><span class="line">cp lcx.txt lcx2.txt # 将lcx.txt 复制一份到lcx2.txt</span><br></pre></td></tr></table></figure><h3 id="删除目录"><a href="#删除目录" class="headerlink" title="删除目录"></a>删除目录</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rm -rf lcx # 删除lcx目录</span><br></pre></td></tr></table></figure><h2 id="文件操作相关命令"><a href="#文件操作相关命令" class="headerlink" title="文件操作相关命令"></a>文件操作相关命令</h2><h3 id="创建文件"><a href="#创建文件" class="headerlink" title="创建文件"></a>创建文件</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">touch 1.txt # 创建1.txt</span><br></pre></td></tr></table></figure><h3 id="查看文件内容"><a href="#查看文件内容" class="headerlink" title="查看文件内容"></a>查看文件内容</h3><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">cat</span> 1<span class="selector-class">.txt</span> # 查看1<span class="selector-class">.txt</span>的内容</span><br></pre></td></tr></table></figure><h3 id="编辑文件内容"><a href="#编辑文件内容" class="headerlink" title="编辑文件内容"></a>编辑文件内容</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vim 1.txt # 编辑1.txt。按i进入vim的编辑模式，编辑好之后按ESC进入命令模式，最后按":wq"保存编辑好的文件并退出</span><br></pre></td></tr></table></figure><h3 id="删除文件"><a href="#删除文件" class="headerlink" title="删除文件"></a>删除文件</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rm -rf 1.txt # 删除1.txt</span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;linux-基础命令&quot;&gt;&lt;a href=&quot;#linux-基础命令&quot; class=&quot;headerlink&quot; title=&quot;linux 基础命令&quot;&gt;&lt;/a&gt;linux 基础命令&lt;/h1&gt;&lt;h2 id=&quot;切换目录&quot;&gt;&lt;a href=&quot;#切换目录&quot; class=&quot;head
+      
+    
+    </summary>
+    
+      <category term="linux" scheme="https://njustlcx.github.io/categories/linux/"/>
+    
+    
+      <category term="linux" scheme="https://njustlcx.github.io/tags/linux/"/>
+    
+  </entry>
   
   <entry>
     <title>nexus安装步骤</title>
@@ -157,9 +182,9 @@
       <category term="ansible" scheme="https://njustlcx.github.io/categories/ansible/"/>
     
     
-      <category term="ansible" scheme="https://njustlcx.github.io/tags/ansible/"/>
-    
       <category term="inventory" scheme="https://njustlcx.github.io/tags/inventory/"/>
+    
+      <category term="ansible" scheme="https://njustlcx.github.io/tags/ansible/"/>
     
   </entry>
   
