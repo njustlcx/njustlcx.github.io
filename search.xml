@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[反射]]></title>
+    <url>%2F2019%2F01%2F20%2F%E5%8F%8D%E5%B0%84%2F</url>
+    <content type="text"><![CDATA[能够分析类能力的程序称为反射。 Class类在程序运行期间，java运行时系统始终未所有的对象维护一个被称为运行时的类型标识。这个信息跟踪着每个对象所属的类。虚拟机利用运行时类型信息选择相应的方法执行。 可以通过专门的Java类访问这些信息，保存这些信息的类称为Class。Object类中有一个getClass()方法可以返回一个Class类型的实例。一个Class对象将表示一个特定类的属性。最常用的Class方法是getName方法，该方法返回类的名字。 12345678910111213141516171819package com.reflection;public class Employee &#123; private String name; private int age; public Employee(String name, int age) &#123; this.name = name; this.age = age; &#125; public int getAge() &#123; return age; &#125; public String getName() &#123; return name; &#125;&#125; 123456789package com.reflection;public class Test1 &#123; public static void main(String[] args) &#123; Employee e = new Employee("xiaoming", 10); Class c1 = e.getClass(); System.out.println(c1.getName()); // com.reflection.Employee &#125;&#125; 利用Class类的forName()方法可以获得类名对应的Class对象。 12345678910111213package com.reflection;public class Test1 &#123; public static void main(String[] args) &#123; String className = "java.util.Random"; try &#123; Class c2 = Class.forName(className); System.out.println(c2.getName()); &#125; catch (ClassNotFoundException e1) &#123; e1.printStackTrace(); &#125; &#125;&#125; 这个方法只有在className是类名或者接口名的时候才能够执行。否则将会抛出一个checked exception。 在启动时，包含main方法的类被加载，它会加载所有需要的类。这些被加载的类又会加载他们需要的类，以此类推。对于一个大型的程序来说，会消耗很多时间。 如果T是任意类型的Java类型(或者void关键字)，T.class将代表匹配的类对象。 123Class c1 = Random.class;Class c2 = int.class;class c3 = Double[].class; 一个Class对象实际是一种类型，这个类型不一定是一种类。 虚拟机为每个类型管理一个Class对象。因此可以用==运算符实现两个类对象比较的操作。 newInstance()方法可以动态的创建一个类的实例。它会调用这个这个类的默认方法，如果该类没有提供默认构造器，那么将会抛出异常。 利用反射分析类的能力检查类的结构。]]></content>
+      <categories>
+        <category>java</category>
+      </categories>
+      <tags>
+        <tag>反射</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[linux基础知识]]></title>
     <url>%2F2019%2F01%2F19%2Flinux%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86%2F</url>
     <content type="text"><![CDATA[linux 基础命令切换目录12345cd user # 切换到当前目录下的user目录cd .. # 打开上一级目录cd / # 切换到系统根目录cd ~ # 切换到当前用户的主目录cd - # 切换到上一个命令所在的目录 目录的操作命令(增删改查)创建目录12mkdir mydir # 在当前目录下创建mydir目录mkdir -p lcx/test # 在当前的lcx目录下创建test目录，如果lcx目录不存在，则创建 查看目录信息123ls # 查看当前目录下的文件(不包括以"."开头的文件)ls -a # 查看当前目录下的所有文件（包括以 "." 开头的文件)ll # ls -l的缩写。查看当前目录下所有文件和目录的详细信息(我一般使用这个命令查看权限较多) find命令用法：find 目录 参数 123find . # 列出当前目录以及子目录下的所有文件和文件夹find / -name "*.txt" # 找出系统根目录下以.txt结尾的文件find / -iname "*.txt" # 同上，但忽略大小写 mv命令mv命令可以对目录、文件进行重命名，也可以将一个文件从一个目录移动到另一个目录 12mv lcx user # 将lcx目录重新命名为user目录mv lcx.txt ../user # 将lcx.txt从当前目录移动到上级目录的user目录 cp 命令cp命令对文件和目录进行复制。用法：cp 目录名称 目标目录名称 12cp -r lcx lcx2 # 将lcx目录复制到lcx2目录，-r表示递归复制cp lcx.txt lcx2.txt # 将lcx.txt 复制一份到lcx2.txt 删除目录1rm -rf lcx # 删除lcx目录 文件操作相关命令创建文件1touch 1.txt # 创建1.txt 查看文件内容1cat 1.txt # 查看1.txt的内容 编辑文件内容1vim 1.txt # 编辑1.txt。按i进入vim的编辑模式，编辑好之后按ESC进入命令模式，最后按":wq"保存编辑好的文件并退出 删除文件1rm -rf 1.txt # 删除1.txt 权限命令操作系统中每个文件都有特定的权限，所属用户和组。权限分为三种：读(r)、写(w)、执行(x)。通过ll命令可以查看文件权限。 文件类型：d表示目录，-表示文件，l表示链接 权限类型读：用r表示，也可以用数字4表示 写：用w表示，也可以用数字2表示 执行：用x表示，也可以用数字1表示 对于文件： 权限名称 可执行操作 r 可以使用cat查看文件的内容 w 可以修改文件的内容 x 可以将其运行为二进制文件 对于目录： 权限名称 可执行操作 r 可以查看目录下列表 w 可以创建和删除目录下文件 x 可以使用cd进入目录 相关命令123chmod 755 lcx.txt # 设置lcx.txt的权限为所属者为读写执行(4+2+1)，该文件所在组的用户和其他用户执行权限为读和执行(4+1)chown shqz lcx.txt # 设置lcx.txt的所属者为shqzchgrp shqz lcx.txt # 修改lcx.txt的所在的组为shqz 查看进程123ps -ef | grep kafka # 查看包括kafka字符串的进程ps aux | grep kafka # 同上，只是表示格式不同kill -9 进程的pid # -9 表示强制杀死进程]]></content>
@@ -14,7 +25,7 @@
   <entry>
     <title><![CDATA[nexus安装步骤]]></title>
     <url>%2F2019%2F01%2F18%2Fnexus%E5%AE%89%E8%A3%85%E6%AD%A5%E9%AA%A4%2F</url>
-    <content type="text"><![CDATA[拉取安装包(nexus-3.15.1-01-unix.tar.gz)到指定目录打开8081端口123tar -zxvf nexus-3.15.1-01-unix.tar.gzcd nexus-3.15.1-01/bin./nexus run &amp; 启动成功即可。]]></content>
+    <content type="text"><![CDATA[拉取安装包(nexus-3.15.1-01-unix.tar.gz)到指定目录打开8081端口 123tar -zxvf nexus-3.15.1-01-unix.tar.gzcd nexus-3.15.1-01/bin./nexus run &amp; 启动成功即可。]]></content>
       <categories>
         <category>java</category>
       </categories>
