@@ -110,7 +110,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT">
+  <meta name="keywords" content="pykafka,">
 
 
 
@@ -123,17 +123,18 @@
 
 
 
-<meta name="description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+<meta name="description" content="pykafka报错：NoBrokersAvailableError 123456789101112131415161718Traceback (most recent call last):  File &quot;/usr/lib64/python2.7/threading.py&quot;, line 812, in __bootstrap_inner    self.run()  File &quot;/usr/lib6">
+<meta name="keywords" content="pykafka">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hello World">
-<meta property="og:url" content="https://njustlcx.github.io/2019/01/16/hello-world/index.html">
+<meta property="og:title" content="pykafka相关问题">
+<meta property="og:url" content="https://njustlcx.github.io/2019/01/22/pykafka相关问题/index.html">
 <meta property="og:site_name" content="小驴球的技术积累">
-<meta property="og:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+<meta property="og:description" content="pykafka报错：NoBrokersAvailableError 123456789101112131415161718Traceback (most recent call last):  File &quot;/usr/lib64/python2.7/threading.py&quot;, line 812, in __bootstrap_inner    self.run()  File &quot;/usr/lib6">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-01-16T00:20:43.001Z">
+<meta property="og:updated_time" content="2019-01-22T07:44:19.380Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hello World">
-<meta name="twitter:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+<meta name="twitter:title" content="pykafka相关问题">
+<meta name="twitter:description" content="pykafka报错：NoBrokersAvailableError 123456789101112131415161718Traceback (most recent call last):  File &quot;/usr/lib64/python2.7/threading.py&quot;, line 812, in __bootstrap_inner    self.run()  File &quot;/usr/lib6">
 
 
 
@@ -163,13 +164,13 @@
 
 
 
-  <link rel="canonical" href="https://njustlcx.github.io/2019/01/16/hello-world/">
+  <link rel="canonical" href="https://njustlcx.github.io/2019/01/22/pykafka相关问题/">
 
 
 
 
 
-  <title>Hello World | 小驴球的技术积累</title>
+  <title>pykafka相关问题 | 小驴球的技术积累</title>
   
 
 
@@ -339,7 +340,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://njustlcx.github.io/2019/01/16/hello-world/">
+    <link itemprop="mainEntityOfPage" href="https://njustlcx.github.io/2019/01/22/pykafka相关问题/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="小驴球">
@@ -356,7 +357,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Hello World</h1>
+          <h1 class="post-title" itemprop="name headline">pykafka相关问题</h1>
         
 
         <div class="post-meta">
@@ -368,8 +369,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-01-16T08:20:43+08:00">
-                2019-01-16
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-01-22T15:10:51+08:00">
+                2019-01-22
               </time>
             
 
@@ -378,6 +379,28 @@
             
           </span>
 
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/python/" itemprop="url" rel="index">
+                    <span itemprop="name">python</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
           
 
           
@@ -411,15 +434,19 @@
       
 
       
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
+        <p>pykafka报错：<code>NoBrokersAvailableError</code></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">Traceback (most recent call last):</span><br><span class="line">  File <span class="string">"/usr/lib64/python2.7/threading.py"</span>, line <span class="number">812</span>, <span class="keyword">in</span> __bootstrap_inner</span><br><span class="line">    self.run()</span><br><span class="line">  File <span class="string">"/usr/lib64/python2.7/threading.py"</span>, line <span class="number">765</span>, <span class="keyword">in</span> run</span><br><span class="line">    self.__target(*self.__args, **self.__kwargs)</span><br><span class="line">  File <span class="string">"kafkaService.py"</span>, line <span class="number">272</span>, <span class="keyword">in</span> run_kafka</span><br><span class="line">    kafka_service = KafkaService()</span><br><span class="line">  File <span class="string">"kafkaService.py"</span>, line <span class="number">121</span>, <span class="keyword">in</span> __init__</span><br><span class="line">    client = KafkaClient(hosts=servers)</span><br><span class="line">  File <span class="string">"/usr/lib/python2.7/site-packages/pykafka-2.8.0-py2.7.egg/pykafka/client.py"</span>, line <span class="number">142</span>, <span class="keyword">in</span> __init__</span><br><span class="line">    broker_version=broker_version)</span><br><span class="line">  File <span class="string">"/usr/lib/python2.7/site-packages/pykafka-2.8.0-py2.7.egg/pykafka/cluster.py"</span>, line <span class="number">215</span>, <span class="keyword">in</span> __init__</span><br><span class="line">    self.update()</span><br><span class="line">  File <span class="string">"/usr/lib/python2.7/site-packages/pykafka-2.8.0-py2.7.egg/pykafka/cluster.py"</span>, line <span class="number">510</span>, <span class="keyword">in</span> update</span><br><span class="line">    metadata = self._get_metadata()</span><br><span class="line">  File <span class="string">"/usr/lib/python2.7/site-packages/pykafka-2.8.0-py2.7.egg/pykafka/cluster.py"</span>, line <span class="number">305</span>, <span class="keyword">in</span> _get_metadata</span><br><span class="line">    <span class="string">'Unable to connect to a broker to fetch metadata. See logs.'</span>)</span><br><span class="line">NoBrokersAvailableError: Unable to connect to a broker to fetch metadata. See logs.</span><br></pre></td></tr></table></figure>
+<p>kafka报错没找到broker，但linux集群的kafka环境都已经正确启动，感觉有点奇怪。于是根据引文的建议，用ipython调用<code>logging</code>模块找到问题所在。进入ipython。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> pykafka <span class="keyword">import</span> KafkaClient</span><br><span class="line"><span class="keyword">import</span> logging <span class="keyword">as</span> log</span><br><span class="line">log.basicConfig(level=log.DEBUG)</span><br><span class="line"><span class="comment"># 然后执行如下语句，日志报错</span></span><br><span class="line">client = KafkaClient(hosts=<span class="string">'192.168.1.230:9092,192.168.1.231:9092,192.168.1.232:9092'</span>)</span><br></pre></td></tr></table></figure>
+<p>报错信息如下：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">INFO:pykafka.cluster:Discovered <span class="number">3</span> brokers</span><br><span class="line">DEBUG:pykafka.cluster:Discovered broker id <span class="number">0</span>: cmdb1:<span class="number">9092</span></span><br><span class="line">DEBUG:pykafka.connection:Connecting to cmdb1:<span class="number">9092</span></span><br><span class="line">INFO:pykafka.connection:Attempt <span class="number">0</span>: failed to connect to cmdb1:<span class="number">9092</span></span><br><span class="line">INFO:pykafka.connection:[Errno <span class="number">-2</span>] Name <span class="keyword">or</span> service <span class="keyword">not</span> known</span><br><span class="line">INFO:pykafka.connection:Retrying <span class="keyword">in</span> <span class="number">300</span>ms.</span><br><span class="line">INFO:pykafka.connection:Attempt <span class="number">1</span>: failed to connect to cmdb1:<span class="number">9092</span></span><br><span class="line">INFO:pykafka.connection:[Errno <span class="number">-2</span>] Name <span class="keyword">or</span> service <span class="keyword">not</span> known</span><br><span class="line">INFO:pykafka.connection:Retrying <span class="keyword">in</span> <span class="number">300</span>ms.</span><br><span class="line">INFO:pykafka.connection:Attempt <span class="number">2</span>: failed to connect to cmdb1:<span class="number">9092</span></span><br><span class="line">INFO:pykafka.connection:[Errno <span class="number">-2</span>] Name <span class="keyword">or</span> service <span class="keyword">not</span> known</span><br><span class="line">INFO:pykafka.connection:Retrying <span class="keyword">in</span> <span class="number">300</span>ms.</span><br><span class="line">INFO:pykafka.handlers:RequestHandler worker: exiting cleanly</span><br><span class="line">WARNING:pykafka.broker:Failed to connect to broker at cmdb1:<span class="number">9092.</span> Check the `listeners` property <span class="keyword">in</span> server.config.</span><br><span class="line">DEBUG:pykafka.cluster:Discovered broker id <span class="number">1</span>: cmdb2:<span class="number">9092</span></span><br><span class="line">DEBUG:pykafka.connection:Connecting to cmdb2:<span class="number">9092</span></span><br><span class="line">INFO:pykafka.connection:Attempt <span class="number">0</span>: failed to connect to cmdb2:<span class="number">9092</span></span><br><span class="line">INFO:pykafka.connection:[Errno <span class="number">-2</span>] Name <span class="keyword">or</span> service <span class="keyword">not</span> known</span><br><span class="line">INFO:pykafka.connection:Retrying <span class="keyword">in</span> <span class="number">300</span>ms.</span><br><span class="line">INFO:pykafka.connection:Attempt <span class="number">1</span>: failed to connect to cmdb2:<span class="number">9092</span></span><br><span class="line">INFO:pykafka.connection:[Errno <span class="number">-2</span>] Name <span class="keyword">or</span> service <span class="keyword">not</span> known</span><br><span class="line">INFO:pykafka.connection:Retrying <span class="keyword">in</span> <span class="number">300</span>ms.</span><br><span class="line">INFO:pykafka.connection:Attempt <span class="number">2</span>: failed to connect to cmdb2:<span class="number">9092</span></span><br><span class="line">INFO:pykafka.connection:[Errno <span class="number">-2</span>] Name <span class="keyword">or</span> service <span class="keyword">not</span> known</span><br><span class="line">INFO:pykafka.connection:Retrying <span class="keyword">in</span> <span class="number">300</span>ms.</span><br><span class="line">WARNING:pykafka.broker:Failed to connect to broker at cmdb2:<span class="number">9092.</span> Check the `listeners` property <span class="keyword">in</span> server.config.</span><br></pre></td></tr></table></figure>
+<p>发现，cmdb1:9092，cmdb2:9092连接提示Name or service not known，估计原因可能是主机名和ip地址没有对应，于是修改/etc/hosts文件，将cmdb1和cmdb2与相应的ip地址相对应。</p>
+<p>再次在ipython中执行如下代码</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> pykafka <span class="keyword">import</span> KafkaClient</span><br><span class="line"><span class="keyword">import</span> logging <span class="keyword">as</span> log</span><br><span class="line">log.basicConfig(level=log.DEBUG)</span><br><span class="line"><span class="comment"># 然后执行如下语句，可以正常连接broker</span></span><br><span class="line">client = KafkaClient(hosts=<span class="string">'192.168.1.230:9092,192.168.1.231:9092,192.168.1.232:9092'</span>)</span><br></pre></td></tr></table></figure>
+<p>日志输出如下：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">DEBUG:pykafka.cluster:Updating cluster, attempt <span class="number">1</span>/<span class="number">3</span></span><br><span class="line">DEBUG:pykafka.connection:Connecting to <span class="number">192.168</span><span class="number">.1</span><span class="number">.230</span>:<span class="number">9092</span></span><br><span class="line">DEBUG:pykafka.connection:Successfully connected to <span class="number">192.168</span><span class="number">.1</span><span class="number">.230</span>:<span class="number">9092</span></span><br><span class="line">INFO:pykafka.handlers:RequestHandler.stop: about to flush requests queue</span><br><span class="line">INFO:pykafka.cluster:Discovered <span class="number">3</span> brokers</span><br><span class="line">DEBUG:pykafka.cluster:Discovered broker id <span class="number">0</span>: cmdb1:<span class="number">9092</span></span><br><span class="line">DEBUG:pykafka.connection:Connecting to cmdb1:<span class="number">9092</span></span><br><span class="line">DEBUG:pykafka.connection:Successfully connected to cmdb1:<span class="number">9092</span></span><br><span class="line">DEBUG:pykafka.cluster:Discovered broker id <span class="number">1</span>: cmdb2:<span class="number">9092</span></span><br><span class="line">DEBUG:pykafka.connection:Connecting to cmdb2:<span class="number">9092</span></span><br><span class="line">DEBUG:pykafka.connection:Successfully connected to cmdb2:<span class="number">9092</span></span><br><span class="line">DEBUG:pykafka.cluster:Discovered broker id <span class="number">3</span>: cmdb3:<span class="number">9092</span></span><br><span class="line">DEBUG:pykafka.connection:Connecting to cmdb3:<span class="number">9092</span></span><br><span class="line">DEBUG:pykafka.connection:Successfully connected to cmdb3:<span class="number">9092</span></span><br><span class="line">INFO:pykafka.cluster:Discovered <span class="number">11</span> topics</span><br><span class="line">DEBUG:pykafka.cluster:Discovered topic <span class="string">'test3'</span></span><br><span class="line">DEBUG:pykafka.cluster:Discovered topic <span class="string">'test2'</span></span><br><span class="line">DEBUG:pykafka.cluster:Discovered topic <span class="string">'TOPIC_SMS'</span></span><br><span class="line">DEBUG:pykafka.cluster:Discovered topic <span class="string">'cmdb_collect_topic_test'</span></span><br><span class="line">DEBUG:pykafka.cluster:Discovered topic <span class="string">'TOPIC_EMAIL'</span></span><br><span class="line">DEBUG:pykafka.cluster:Discovered topic <span class="string">'ansible_task_test3'</span></span><br><span class="line">DEBUG:pykafka.cluster:Discovered topic <span class="string">'TOPIC_WX'</span></span><br><span class="line">DEBUG:pykafka.cluster:Discovered topic <span class="string">'test'</span></span><br><span class="line">DEBUG:pykafka.cluster:Discovered topic <span class="string">'TOPIC_COMM'</span></span><br><span class="line">DEBUG:pykafka.cluster:Discovered topic <span class="string">'ansible_task_result'</span></span><br></pre></td></tr></table></figure>
+<p>由此，问题得到解决。</p>
+<p>参考：</p>
 
       
     </div>
@@ -435,6 +462,12 @@
 
     <footer class="post-footer">
       
+        <div class="post-tags">
+          
+            <a href="/tags/pykafka/" rel="tag"># pykafka</a>
+          
+        </div>
+      
 
       
       
@@ -444,15 +477,15 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
+              <a href="/2019/01/21/kafka集群搭建/" rel="next" title="kafka集群搭建">
+                <i class="fa fa-chevron-left"></i> kafka集群搭建
+              </a>
+            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/01/17/hello/" rel="prev" title="hello">
-                hello <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -531,17 +564,8 @@
       
 
       
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
-            文章目录
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
-            站点概览
-          </li>
-        </ul>
-      
 
-      <section class="site-overview-wrap sidebar-panel">
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
             
@@ -569,7 +593,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-count">6</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -580,7 +604,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">9</span>
+                  <span class="site-state-item-count">10</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -626,22 +650,6 @@
         </div>
       </section>
 
-      
-      <!--noindex-->
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-              
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Quick-Start"><span class="nav-number">1.</span> <span class="nav-text">Quick Start</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Create-a-new-post"><span class="nav-number">1.1.</span> <span class="nav-text">Create a new post</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Run-server"><span class="nav-number">1.2.</span> <span class="nav-text">Run server</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Generate-static-files"><span class="nav-number">1.3.</span> <span class="nav-text">Generate static files</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Deploy-to-remote-sites"><span class="nav-number">1.4.</span> <span class="nav-text">Deploy to remote sites</span></a></li></ol></li></ol></div>
-            
-
-          </div>
-        </section>
-      <!--/noindex-->
       
 
       

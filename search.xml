@@ -1,6 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[pykafka相关问题]]></title>
+    <url>%2F2019%2F01%2F22%2Fpykafka%E7%9B%B8%E5%85%B3%E9%97%AE%E9%A2%98%2F</url>
+    <content type="text"><![CDATA[pykafka报错：NoBrokersAvailableError 123456789101112131415161718Traceback (most recent call last): File "/usr/lib64/python2.7/threading.py", line 812, in __bootstrap_inner self.run() File "/usr/lib64/python2.7/threading.py", line 765, in run self.__target(*self.__args, **self.__kwargs) File "kafkaService.py", line 272, in run_kafka kafka_service = KafkaService() File "kafkaService.py", line 121, in __init__ client = KafkaClient(hosts=servers) File "/usr/lib/python2.7/site-packages/pykafka-2.8.0-py2.7.egg/pykafka/client.py", line 142, in __init__ broker_version=broker_version) File "/usr/lib/python2.7/site-packages/pykafka-2.8.0-py2.7.egg/pykafka/cluster.py", line 215, in __init__ self.update() File "/usr/lib/python2.7/site-packages/pykafka-2.8.0-py2.7.egg/pykafka/cluster.py", line 510, in update metadata = self._get_metadata() File "/usr/lib/python2.7/site-packages/pykafka-2.8.0-py2.7.egg/pykafka/cluster.py", line 305, in _get_metadata 'Unable to connect to a broker to fetch metadata. See logs.')NoBrokersAvailableError: Unable to connect to a broker to fetch metadata. See logs. kafka报错没找到broker，但linux集群的kafka环境都已经正确启动，感觉有点奇怪。于是根据引文的建议，用ipython调用logging模块找到问题所在。进入ipython。 12345from pykafka import KafkaClientimport logging as loglog.basicConfig(level=log.DEBUG)# 然后执行如下语句，日志报错client = KafkaClient(hosts='192.168.1.230:9092,192.168.1.231:9092,192.168.1.232:9092') 报错信息如下： 1234567891011121314151617181920212223242526INFO:pykafka.cluster:Discovered 3 brokersDEBUG:pykafka.cluster:Discovered broker id 0: cmdb1:9092DEBUG:pykafka.connection:Connecting to cmdb1:9092INFO:pykafka.connection:Attempt 0: failed to connect to cmdb1:9092INFO:pykafka.connection:[Errno -2] Name or service not knownINFO:pykafka.connection:Retrying in 300ms.INFO:pykafka.connection:Attempt 1: failed to connect to cmdb1:9092INFO:pykafka.connection:[Errno -2] Name or service not knownINFO:pykafka.connection:Retrying in 300ms.INFO:pykafka.connection:Attempt 2: failed to connect to cmdb1:9092INFO:pykafka.connection:[Errno -2] Name or service not knownINFO:pykafka.connection:Retrying in 300ms.INFO:pykafka.handlers:RequestHandler worker: exiting cleanlyWARNING:pykafka.broker:Failed to connect to broker at cmdb1:9092. Check the `listeners` property in server.config.DEBUG:pykafka.cluster:Discovered broker id 1: cmdb2:9092DEBUG:pykafka.connection:Connecting to cmdb2:9092INFO:pykafka.connection:Attempt 0: failed to connect to cmdb2:9092INFO:pykafka.connection:[Errno -2] Name or service not knownINFO:pykafka.connection:Retrying in 300ms.INFO:pykafka.connection:Attempt 1: failed to connect to cmdb2:9092INFO:pykafka.connection:[Errno -2] Name or service not knownINFO:pykafka.connection:Retrying in 300ms.INFO:pykafka.connection:Attempt 2: failed to connect to cmdb2:9092INFO:pykafka.connection:[Errno -2] Name or service not knownINFO:pykafka.connection:Retrying in 300ms.WARNING:pykafka.broker:Failed to connect to broker at cmdb2:9092. Check the `listeners` property in server.config. 发现，cmdb1:9092，cmdb2:9092连接提示Name or service not known，估计原因可能是主机名和ip地址没有对应，于是修改/etc/hosts文件，将cmdb1和cmdb2与相应的ip地址相对应。 再次在ipython中执行如下代码 12345from pykafka import KafkaClientimport logging as loglog.basicConfig(level=log.DEBUG)# 然后执行如下语句，可以正常连接brokerclient = KafkaClient(hosts='192.168.1.230:9092,192.168.1.231:9092,192.168.1.232:9092') 日志输出如下： 12345678910111213141516171819202122232425DEBUG:pykafka.cluster:Updating cluster, attempt 1/3DEBUG:pykafka.connection:Connecting to 192.168.1.230:9092DEBUG:pykafka.connection:Successfully connected to 192.168.1.230:9092INFO:pykafka.handlers:RequestHandler.stop: about to flush requests queueINFO:pykafka.cluster:Discovered 3 brokersDEBUG:pykafka.cluster:Discovered broker id 0: cmdb1:9092DEBUG:pykafka.connection:Connecting to cmdb1:9092DEBUG:pykafka.connection:Successfully connected to cmdb1:9092DEBUG:pykafka.cluster:Discovered broker id 1: cmdb2:9092DEBUG:pykafka.connection:Connecting to cmdb2:9092DEBUG:pykafka.connection:Successfully connected to cmdb2:9092DEBUG:pykafka.cluster:Discovered broker id 3: cmdb3:9092DEBUG:pykafka.connection:Connecting to cmdb3:9092DEBUG:pykafka.connection:Successfully connected to cmdb3:9092INFO:pykafka.cluster:Discovered 11 topicsDEBUG:pykafka.cluster:Discovered topic 'test3'DEBUG:pykafka.cluster:Discovered topic 'test2'DEBUG:pykafka.cluster:Discovered topic 'TOPIC_SMS'DEBUG:pykafka.cluster:Discovered topic 'cmdb_collect_topic_test'DEBUG:pykafka.cluster:Discovered topic 'TOPIC_EMAIL'DEBUG:pykafka.cluster:Discovered topic 'ansible_task_test3'DEBUG:pykafka.cluster:Discovered topic 'TOPIC_WX'DEBUG:pykafka.cluster:Discovered topic 'test'DEBUG:pykafka.cluster:Discovered topic 'TOPIC_COMM'DEBUG:pykafka.cluster:Discovered topic 'ansible_task_result' 由此，问题得到解决。 参考：]]></content>
+      <categories>
+        <category>python</category>
+      </categories>
+      <tags>
+        <tag>pykafka</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[kafka集群搭建]]></title>
+    <url>%2F2019%2F01%2F21%2Fkafka%E9%9B%86%E7%BE%A4%E6%90%AD%E5%BB%BA%2F</url>
+    <content type="text"><![CDATA[转载kafka集群搭建 这篇博文写的很详细，成功搭建kafka集群。]]></content>
+      <categories>
+        <category>消息队列</category>
+      </categories>
+      <tags>
+        <tag>kafka</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[反射]]></title>
     <url>%2F2019%2F01%2F20%2F%E5%8F%8D%E5%B0%84%2F</url>
     <content type="text"><![CDATA[能够分析类能力的程序称为反射。 Class类在程序运行期间，java运行时系统始终未所有的对象维护一个被称为运行时的类型标识。这个信息跟踪着每个对象所属的类。虚拟机利用运行时类型信息选择相应的方法执行。 可以通过专门的Java类访问这些信息，保存这些信息的类称为Class。Object类中有一个getClass()方法可以返回一个Class类型的实例。一个Class对象将表示一个特定类的属性。最常用的Class方法是getName方法，该方法返回类的名字。 12345678910111213141516171819package com.reflection;public class Employee &#123; private String name; private int age; public Employee(String name, int age) &#123; this.name = name; this.age = age; &#125; public int getAge() &#123; return age; &#125; public String getName() &#123; return name; &#125;&#125; 123456789package com.reflection;public class Test1 &#123; public static void main(String[] args) &#123; Employee e = new Employee("xiaoming", 10); Class c1 = e.getClass(); System.out.println(c1.getName()); // com.reflection.Employee &#125;&#125; 利用Class类的forName()方法可以获得类名对应的Class对象。 12345678910111213package com.reflection;public class Test1 &#123; public static void main(String[] args) &#123; String className = "java.util.Random"; try &#123; Class c2 = Class.forName(className); System.out.println(c2.getName()); &#125; catch (ClassNotFoundException e1) &#123; e1.printStackTrace(); &#125; &#125;&#125; 这个方法只有在className是类名或者接口名的时候才能够执行。否则将会抛出一个checked exception。 在启动时，包含main方法的类被加载，它会加载所有需要的类。这些被加载的类又会加载他们需要的类，以此类推。对于一个大型的程序来说，会消耗很多时间。 如果T是任意类型的Java类型(或者void关键字)，T.class将代表匹配的类对象。 123Class c1 = Random.class;Class c2 = int.class;class c3 = Double[].class; 一个Class对象实际是一种类型，这个类型不一定是一种类。 虚拟机为每个类型管理一个Class对象。因此可以用==运算符实现两个类对象比较的操作。 newInstance()方法可以动态的创建一个类的实例。它会调用这个这个类的默认方法，如果该类没有提供默认构造器，那么将会抛出异常。 利用反射分析类的能力检查类的结构。]]></content>
@@ -85,21 +107,5 @@
         <tag>inventory</tag>
         <tag>ansible</tag>
       </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[hello]]></title>
-    <url>%2F2019%2F01%2F17%2Fhello%2F</url>
-    <content type="text"></content>
-      <categories>
-        <category>test</category>
-      </categories>
-      <tags>
-        <tag>test</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[Hello World]]></title>
-    <url>%2F2019%2F01%2F16%2Fhello-world%2F</url>
-    <content type="text"><![CDATA[Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick StartCreate a new post1$ hexo new "My New Post" More info: Writing Run server1$ hexo server More info: Server Generate static files1$ hexo generate More info: Generating Deploy to remote sites1$ hexo deploy More info: Deployment]]></content>
   </entry>
 </search>
