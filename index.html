@@ -19,9 +19,12 @@
       </span>
     </a>
     <nav class="nav" aria-label="主导航">
-      <a href="#posts">文章</a>
-      <a href="#topics">专题</a>
-      <a href="#toolbox">工具</a>
+      <a href="#basics">大模型基础</a>
+      <a href="#app-dev">应用开发</a>
+      <a href="#rag">RAG</a>
+      <a href="#agent">Agent</a>
+      <a href="#toolbox">工具链</a>
+      <a href="#evaluation">评测部署</a>
       <a href="/archives/">旧文档</a>
     </nav>
   </header>
@@ -33,7 +36,7 @@
         <h1>把大模型能力落到真实产品和工程系统里。</h1>
         <p class="hero-text">这里记录 LLM 应用开发、Agent 设计、RAG、提示词工程、评测、工具调用和模型部署相关的实践笔记。</p>
         <div class="hero-actions">
-          <a class="button primary" href="#posts">阅读最新文章</a>
+          <a class="button primary" href="#catalog">浏览主题目录</a>
           <a class="button" href="#theme">自定义主题</a>
         </div>
       </div>
@@ -50,6 +53,45 @@
           <p>从原型到上线，关注可观测、可评测、可迭代。</p>
         </div>
       </aside>
+    </section>
+
+    <section class="section catalog-section" id="catalog">
+      <div class="section-heading">
+        <p class="eyebrow">Catalog</p>
+        <h2>主题目录</h2>
+      </div>
+      <div class="catalog-grid">
+        <a class="catalog-card" href="#basics">
+          <span>01</span>
+          <strong>大模型基础</strong>
+          <p>模型能力、Token、上下文、Embedding、提示词。</p>
+        </a>
+        <a class="catalog-card" href="#app-dev">
+          <span>02</span>
+          <strong>应用开发</strong>
+          <p>API 接入、对话状态、结构化输出、工程架构。</p>
+        </a>
+        <a class="catalog-card" href="#rag">
+          <span>03</span>
+          <strong>RAG</strong>
+          <p>文档处理、召回、重排、引用和知识库评估。</p>
+        </a>
+        <a class="catalog-card" href="#agent">
+          <span>04</span>
+          <strong>Agent</strong>
+          <p>工具调用、任务规划、MCP、工作流与权限边界。</p>
+        </a>
+        <a class="catalog-card" href="#toolbox">
+          <span>05</span>
+          <strong>工具链</strong>
+          <p>开发框架、向量库、调试、观测和部署工具。</p>
+        </a>
+        <a class="catalog-card" href="#evaluation">
+          <span>06</span>
+          <strong>评测部署</strong>
+          <p>自动评测、成本、延迟、安全和生产化实践。</p>
+        </a>
+      </div>
     </section>
 
     <section class="section" id="theme">
@@ -74,10 +116,22 @@
       </div>
     </section>
 
-    <section class="section" id="posts">
+    <section class="section" id="basics">
       <div class="section-heading">
-        <p class="eyebrow">Latest</p>
-        <h2>最新文章</h2>
+        <p class="eyebrow">Basics</p>
+        <h2>大模型基础</h2>
+      </div>
+      <div class="resource-list">
+        <a href="/posts/rag-basics/"><strong>RAG 的核心概念与落地边界</strong><span>理解检索增强生成的完整链路。</span></a>
+        <a href="#theme"><strong>主题与站点结构</strong><span>当前站点支持浅色、绿色、深色和自定义强调色。</span></a>
+        <a href="#app-dev"><strong>下一步计划</strong><span>补充 Token、Embedding、上下文窗口和提示词工程笔记。</span></a>
+      </div>
+    </section>
+
+    <section class="section" id="app-dev">
+      <div class="section-heading">
+        <p class="eyebrow">Application</p>
+        <h2>应用开发</h2>
       </div>
       <div class="post-grid">
         <article class="post-card">
@@ -91,25 +145,49 @@
           <p>整理开发、调试、评测、向量检索、文档处理和部署阶段常用工具的选择思路。</p>
         </article>
         <article class="post-card">
-          <p class="post-meta">概念 · 7 min</p>
-          <h3><a href="/posts/rag-basics/">RAG 的核心概念与落地边界</a></h3>
-          <p>用工程视角拆解切分、召回、重排、生成和评估，避免把 RAG 只理解成向量库查询。</p>
+          <p class="post-meta">开发实践 · planned</p>
+          <h3><a href="#app-dev">结构化输出与函数调用</a></h3>
+          <p>规划模型输出 schema、错误重试、工具结果合并和用户确认流程。</p>
         </article>
       </div>
     </section>
 
-    <section class="section topic-layout" id="topics">
+    <section class="section topic-layout" id="rag">
       <div class="section-heading">
-        <p class="eyebrow">Topics</p>
-        <h2>长期专题</h2>
+        <p class="eyebrow">Retrieval</p>
+        <h2>RAG</h2>
+      </div>
+      <div class="post-grid">
+        <article class="post-card">
+          <p class="post-meta">概念 · 7 min</p>
+          <h3><a href="/posts/rag-basics/">RAG 的核心概念与落地边界</a></h3>
+          <p>用工程视角拆解切分、召回、重排、生成和评估，避免把 RAG 只理解成向量库查询。</p>
+        </article>
+        <article class="post-card">
+          <p class="post-meta">工程实践 · planned</p>
+          <h3><a href="#rag">知识库文档切分策略</a></h3>
+          <p>围绕 Markdown、PDF、表格和代码块设计不同的切分与元数据策略。</p>
+        </article>
+        <article class="post-card">
+          <p class="post-meta">评估 · planned</p>
+          <h3><a href="#rag">检索质量评估清单</a></h3>
+          <p>覆盖召回率、上下文相关性、引用准确率和拒答能力。</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section topic-layout" id="agent">
+      <div class="section-heading">
+        <p class="eyebrow">Agent</p>
+        <h2>Agent 与工具调用</h2>
       </div>
       <div class="topic-list">
-        <a href="#posts">LLM 应用架构</a>
-        <a href="#posts">Agent 与工具调用</a>
-        <a href="#posts">RAG 与知识库</a>
-        <a href="#posts">模型评测与观测</a>
-        <a href="#posts">提示词工程</a>
-        <a href="#posts">本地模型与部署</a>
+        <a href="#agent">工具 Schema 设计</a>
+        <a href="#agent">任务规划与反思</a>
+        <a href="#agent">MCP 协议笔记</a>
+        <a href="#agent">权限与确认机制</a>
+        <a href="#agent">多 Agent 协作</a>
+        <a href="#agent">工作流编排</a>
       </div>
     </section>
 
@@ -123,6 +201,21 @@
         <div role="row"><strong>检索</strong><span>pgvector、Milvus、Qdrant、Elasticsearch</span></div>
         <div role="row"><strong>评测</strong><span>promptfoo、Ragas、DeepEval、OpenTelemetry</span></div>
         <div role="row"><strong>部署</strong><span>Docker、vLLM、Ollama、Kubernetes</span></div>
+      </div>
+    </section>
+
+    <section class="section" id="evaluation">
+      <div class="section-heading">
+        <p class="eyebrow">Production</p>
+        <h2>评测部署</h2>
+      </div>
+      <div class="topic-list">
+        <a href="#evaluation">Prompt 回归测试</a>
+        <a href="#evaluation">RAG 自动评测</a>
+        <a href="#evaluation">模型成本观测</a>
+        <a href="#evaluation">延迟与吞吐优化</a>
+        <a href="#evaluation">内容安全策略</a>
+        <a href="#evaluation">本地模型部署</a>
       </div>
     </section>
   </main>

@@ -79,9 +79,22 @@ a {
   display: flex;
   flex-wrap: wrap;
   justify-content: flex-end;
-  gap: 8px 20px;
-  color: var(--muted);
+  gap: 8px;
   font-size: 14px;
+}
+
+.nav a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 34px;
+  padding: 6px 10px;
+  border-radius: 8px;
+  color: var(--muted);
+  font-weight: 700;
+}
+
+.nav a:hover {
+  background: var(--surface-strong);
 }
 
 .nav a:hover,
@@ -319,6 +332,61 @@ h3 {
   font-weight: 800;
 }
 
+.catalog-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+}
+
+.catalog-card,
+.resource-list a {
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--surface);
+  box-shadow: var(--shadow);
+}
+
+.catalog-card {
+  display: grid;
+  min-height: 172px;
+  padding: 22px;
+}
+
+.catalog-card span {
+  color: var(--accent);
+  font-size: 13px;
+  font-weight: 900;
+}
+
+.catalog-card strong {
+  margin-top: 18px;
+  font-size: 22px;
+}
+
+.catalog-card p,
+.resource-list span {
+  margin: 8px 0 0;
+  color: var(--muted);
+}
+
+.catalog-card:hover,
+.resource-list a:hover {
+  border-color: color-mix(in srgb, var(--accent) 44%, var(--line));
+  transform: translateY(-2px);
+}
+
+.resource-list {
+  display: grid;
+  gap: 12px;
+}
+
+.resource-list a {
+  display: grid;
+  grid-template-columns: minmax(190px, 0.38fr) 1fr;
+  gap: 18px;
+  padding: 18px 20px;
+}
+
 .topic-list a:hover {
   background: var(--surface-strong);
   color: var(--accent);
@@ -456,6 +524,10 @@ body[data-theme="ink"] {
   .topic-list {
     grid-template-columns: repeat(2, 1fr);
   }
+
+  .catalog-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
 @media (max-width: 620px) {
@@ -480,7 +552,12 @@ body[data-theme="ink"] {
   }
 
   .topic-list,
+  .catalog-grid,
   .tool-table div {
+    grid-template-columns: 1fr;
+  }
+
+  .resource-list a {
     grid-template-columns: 1fr;
   }
 
