@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f7f9fb">
+  <title>大模型应用开发的最小工程栈 | 小驴哥AI笔记</title>
+  <meta name="description" content="大模型应用从原型到上线需要的最小工程栈。">
+  <link rel="stylesheet" href="/css/main.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="/" aria-label="小驴哥AI笔记 首页">
+      <span class="brand-mark">L</span>
+      <span><strong>小驴哥AI笔记</strong><small>LLM Engineering Notes</small></span>
+    </a>
+    <nav class="nav" aria-label="主导航"><a href="/">首页</a><a href="/posts/rag/">RAG</a><a href="/posts/app-dev/" aria-current="page">应用开发</a><a href="/posts/toolbox/">工具链</a></nav>
+  </header>
+
+  <main class="article-page">
+    <a class="back-link" href="/posts/app-dev/">返回 应用开发</a>
+    <article>
+      <header class="article-header">
+        <p class="eyebrow">应用开发 · 8 min</p>
+        <h1>大模型应用开发的最小工程栈</h1>
+        <p class="hero-text">一个可上线的 LLM 应用不只是一段 prompt，而是一套能被调试、评测和持续迭代的工程系统。</p>
+        <div class="article-stats" aria-label="文章访问统计">
+          <span id="busuanzi_container_page_pv"><span>本文阅读 <strong id="busuanzi_value_page_pv">--</strong></span></span>
+          <span id="busuanzi_container_site_pv"><span>站点访问 <strong id="busuanzi_value_site_pv">--</strong></span></span>
+        </div>
+      </header>
+      <div class="article-content">
+        <h2>1. 模型访问层</h2>
+        <p>模型访问层负责统一不同模型供应商的 API、超时、重试、流式输出、错误码和成本记录。早期可以保持简单，但接口需要稳定，避免业务代码直接绑定某一个模型 SDK。</p>
+        <h2>2. 上下文管理</h2>
+        <p>上下文决定模型能看到什么。常见输入包括用户消息、系统指令、检索片段、工具返回值、用户画像和历史摘要。工程上要限制 token 预算，并记录每次实际送入模型的上下文。</p>
+        <h2>3. 工具调用</h2>
+        <p>工具调用让模型从“会说”变成“能做”。建议把工具设计成小而明确的函数，输入输出使用结构化 schema，并对危险动作加入确认或权限控制。</p>
+        <h2>4. 评测与观测</h2>
+        <p>上线前至少准备一组固定用例，覆盖正常、边界和失败场景。上线后记录 prompt、模型、延迟、token、工具调用、用户反馈和失败原因，持续定位问题。</p>
+        <blockquote>最小工程栈的目标不是复杂，而是让每次模型行为都有证据可查、有用例可回归、有指标可对比。</blockquote>
+      </div>
+    </article>
+  </main>
+
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+  <script src="/js/site.js"></script>
+</body>
+</html>
